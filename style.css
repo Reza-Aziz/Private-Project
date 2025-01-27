@@ -1,0 +1,71 @@
+
+/* Home Start */
+#home{
+    background: url('picture/backgorund-home.png') center;
+    min-height: 100vh;
+}
+#home::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(47, 63, 53, 0.5); /* Overlay hitam dengan opacity 0.5, bisa disesuaikan */
+    z-index: 1; /* Pastikan overlay ada di atas background */
+  }
+  
+  #home h1, #home img, #home h2 {
+    position: relative;
+    z-index: 2; /* Pastikan konten berada di atas overlay */
+    color: white; /* Menambahkan warna teks agar terlihat di atas overlay */
+  }
+  #home img, h1, h2{
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.5));
+}
+/* Home End */
+/* Nav Start */
+.nav-item{
+    margin-right: 2rem;
+}
+.navbar .nav-link:hover {
+    color: #e19130 !important;
+  }
+/* Nav End */
+/* About Start */
+#about h1, h2, span{
+    color: #e19130;
+}
+/* About End */
+/* News Start */
+#news h1{
+    margin-top: 2rem;
+}
+#news{
+    background-color: #2e473a;
+}
+#news h1{
+    color: #e19130;
+}
+#news a{
+    background-color: #fbefcf;
+}
+#news a:hover{
+    background-color: #2f3f35;
+    color: #e19130;
+}
+
+#news .col{
+        filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.06));
+      
+}
+/* News End */
+/* FOOTER START */
+#footer ul{
+    max-width: 25%;
+}
+#footer li{
+    width: 20px;
+    height: 20px;
+    list-style: none;
+}
