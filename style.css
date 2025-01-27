@@ -1,20 +1,81 @@
-
+h1, h2{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+}
 /* Home Start */
 #home{
-    background: url('picture/backgorund-home.png') center;
     min-height: 100vh;
 }
-#home::after {
-    content: "";
+.bgImage{
+    width: 100%;
+    height: 100vh;
+    background-image: url('picture/background-home-1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: -1; /* Pastikan overlay berada di bawah konten */
+    /* filter: blur(5px); Menambahkan efek blur pada gambar */
+    animation: bgChange 10s linear infinite;
+}
+@keyframes bgChange {
+    0% {
+        background-image: url('picture/background-home-1.png');
+        background-position: center center;
+        background-size: cover;
+    }
+    20% {
+        background-image: url('picture/background-home-1.png');
+        background-position: center center;
+        background-size: cover;
+    }
+    25% {
+        background-image: url('picture/background-home-2.png');
+        background-position: center center;
+        background-size: cover;
+    }
+    45% {
+        background-image: url('picture/background-home-2.png');
+        background-position: center center;
+        background-size: cover;
+    }
+    50% {
+        background-image: url('picture/background-home-3.png');
+        background-position: center center;
+        background-size: cover;
+    }
+    70% {
+        background-image: url('picture/background-home-3.png');
+        background-position: center center;
+        background-size: cover;
+    }
+    75% {
+        background-image: url('picture/background-home-3.png');
+        background-position: center center;
+        background-size: cover;
+    }
+    95% {
+        background-image: url('picture/background-home-1.png');
+        background-position: center center;
+        background-size: cover;
+    } 
+    
+}
+.overlay{
+    background: rgba(47, 63, 53, 0.5); /* Menambahkan warna overlay */
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(47, 63, 53, 0.5); /* Overlay hitam dengan opacity 0.5, bisa disesuaikan */
-    z-index: 1; /* Pastikan overlay ada di atas background */
-  }
-  
+    z-index: 1; /* Pastikan overlay berada di bawah konten */
+    pointer-events: none;
+}
+
+#home .content{
+    min-height: 100vh;
+    z-index: 3;
+}
   #home h1, #home img, #home h2 {
     position: relative;
     z-index: 2; /* Pastikan konten berada di atas overlay */
@@ -23,14 +84,61 @@
   #home img, h1, h2{
     filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.5));
 }
+#home h1{
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+#home h2{
+    font-family: "Merriweather", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+@media (max-width: 768px) {
+    #logo {
+        width: 150px;
+        height: 150px;
+    }
+}
 /* Home End */
 /* Nav Start */
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5); /* Ubah warna border menjadi putih */
+}
+.navbar-toggler:focus,
+.navbar-toggler:active {
+    box-shadow: none;
+}
+.navbar-brand h4{
+    font-family: "Roboto", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;}
 .nav-item{
     margin-right: 2rem;
 }
 .navbar .nav-link:hover {
     color: #e19130 !important;
   }
+  .nav-link{
+    font-family: "Roboto", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  }
+  @media (max-width: 768px) {
+    .navbar-brand h4 {
+        font-size: 0.8em;
+    }
+}
 /* Nav End */
 /* About Start */
 #about h1, h2, span{
@@ -59,13 +167,50 @@
         filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.06));
       
 }
+
+#card-container {
+    max-height: auto;
+  }
+  
+  
 /* News End */
 /* FOOTER START */
+footer{
+    background-image: url(picture/background-home-3.png);
+    background-size: cover;
+    background-attachment: fixed;
+}
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(47, 63, 53, 1) 0%, rgba(47, 63, 53, 0.8) 80%, rgba(47, 63, 53, 0.8) 100%);
+    z-index: 1; /* Pastikan overlay ada di belakang konten */
+  }
+  
+
+  
+  footer .container {
+    position: relative; /* Supaya konten tetap di atas overlay */
+    z-index: 1;
+  }
+
+  
 #footer ul{
-    max-width: 25%;
+    max-width: 100%;
+    justify-content: space-between;
 }
 #footer li{
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     list-style: none;
+}
+/* MAP */
+@media (max-width: 768px) {
+    #map {
+        width: 200px;
+        height: 200px;
+    }
 }
